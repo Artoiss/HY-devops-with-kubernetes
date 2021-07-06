@@ -4,6 +4,7 @@ import ("fmt"
         "time"
         "math/rand"
         "strings"
+        "os"
 )
 
 func main(){
@@ -11,6 +12,7 @@ func main(){
   var hash = randomStr(64)
 
   // Save hash
+  saveString(hash)
 
   // Print timestamp and hash
   for range time.Tick(time.Second * 5) {
@@ -30,4 +32,14 @@ func randomStr(length int) string {
   }
   str := b.String()
 	return string(str)
+}
+
+func saveString(str string){
+  f, err := os.Create("data.txt")
+  defer f.Close()
+  if err != nil {
+          fmt.Println(err)
+      }
+
+  f.WriteString(str)
 }

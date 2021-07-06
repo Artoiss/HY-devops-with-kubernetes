@@ -1,3 +1,3 @@
-module example.com/hello
+module example.com/timestamp
 
 go 1.16
