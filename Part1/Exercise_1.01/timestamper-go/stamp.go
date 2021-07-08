@@ -11,8 +11,8 @@ func main(){
   // Generate hash
   var hash = randomStr(64)
 
-  // Save hash
-  saveString(hash)
+  // Save hash if needed
+  //saveString(hash)
 
   // Print timestamp and hash
   for range time.Tick(time.Second * 5) {
